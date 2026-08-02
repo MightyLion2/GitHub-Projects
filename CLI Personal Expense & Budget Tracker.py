@@ -1,3 +1,4 @@
+import csv
 """Create a main menu loop with choices: Add Expense, View Summary, Export CSV, Exit.
 Store transactions in a list of dictionaries with category, amount, and description.
 Use `try-except` blocks to handle non-numeric input safely.
