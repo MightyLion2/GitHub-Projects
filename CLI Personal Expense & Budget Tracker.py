@@ -46,9 +46,9 @@ def exit_menu():
 
 def show_summary(expenses, descriptions, prices):
     print("--------------------------------- YOUR EXPENSES ---------------------------------")
-    print(expenses)
-    print(descriptions)
-    print(prices)
+    print(expenses[0])
+    print(descriptions[0])
+    print(prices[0])
     print("---------------------------------------------------------------------------------")
 if __name__ == "__main__":
     main()
