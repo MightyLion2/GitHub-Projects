@@ -5,6 +5,9 @@ Use `try-except` blocks to handle non-numeric input safely.
 Write a helper function to export data into a `expenses.csv` file using standard Python `csv` module."""
 
 IsRunning = True
+expenses = []
+descriptions = []
+prices = []
 
 def main():
     while IsRunning:
@@ -29,13 +32,23 @@ def export_csv():
     pass
 
 def add_expense():
-    pass
-
+    while True:
+        expense = input("enter an expense: ")
+        expenses.append(expense)
+        if expense == "q":
+                 break
+        description = input("enter a description for this expense: ")
+        descriptions.append(description)
+        price = float(input("What is the price of this expense: $"))
+        prices.append(price)
 def exit_menu():
     pass
 
-def show_summary():
-    pass
-
+def show_summary(expenses, descriptions, prices):
+    print("--------------------------------- YOUR EXPENSES ---------------------------------")
+    print(expenses)
+    print(descriptions)
+    print(prices)
+    print("---------------------------------------------------------------------------------")
 if __name__ == "__main__":
     main()
