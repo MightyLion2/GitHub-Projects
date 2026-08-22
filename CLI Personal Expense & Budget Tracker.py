@@ -1,4 +1,5 @@
 import csv
+import pandas as P
 """Create a main menu loop with choices: Add Expense, View Summary, Export CSV, Exit.
 Store transactions in a list of dictionaries with category, amount, and description.
 Use `try-except` blocks to handle non-numeric input safely.
@@ -48,9 +49,9 @@ def show_summary():
     data = {"Expenses": Expenses,
             "Descriptions": Descriptions,
             "Prices": Prices}
+    df = P.DataFrame(data)
     print("--------------------------------- YOUR EXPENSES ---------------------------------")
-    for key, values in data.items():
-        print(f"{key}: {values}")
+    print(df.to_string(index=False))
     print("---------------------------------------------------------------------------------")
 if __name__ == "__main__":
     main()
