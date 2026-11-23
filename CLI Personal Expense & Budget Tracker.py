@@ -28,6 +28,8 @@ def main():
         elif choice == '4':
             print("Goodbye!")
             break
+        elif choice == '5':
+            edit()
         else:
             print("Invalid choice, try again.\n")
 
@@ -66,10 +68,21 @@ def export_csv():
     #     print(f"That file already exists!")
     # return writer
     df = P.DataFrame(data)
-    df.to_csv(file_path, index=False)
+    try:
+        df.to_csv(file_path, mode='x', index=False)
+    except FileExistsError:
+        print()
+        print("THIS FILE ALREADY EXISTS, USE:\n'Export to existing CSV'")
+        print()
 
 def edit():
-    pass
+   df = P.DataFrame(data)
+   df.to_csv(file_path, mode='a', index=False, header=False)
+    # df2 = P.read_csv(file_path)
+
+    # print(df2)
+
+    # df2.to_csv("C:/Users/felix/Downloads/Modified.csv")
 
 
 if __name__ == "__main__":
